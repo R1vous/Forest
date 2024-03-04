@@ -3,8 +3,10 @@
 .main-nav {
 	position: fixed;
 	top: 0;
-	left: 0;
+	left: 50%;
+	translate: -50%;
 	width: 100%;
+	max-width: 1200px;
 
 	&__bar {
 		display: flex;
@@ -24,8 +26,9 @@
 		flex-direction: column;
 		justify-content: space-between;
 		box-sizing: content-box;
-		height: 20px;
+		height: 21px;
 		padding: 20px;
+		cursor: pointer;
 
 		.main-nav__hamburger-bar,
 		&::after,
@@ -35,8 +38,41 @@
 			height: 3px;
 			border-radius: 5px;
 			background-color: $black;
+			transform-origin: 50%;
+		}
+
+		.main-nav__hamburger-bar {
+			scale: 1 1;
+			transition: scale 0.25s 0.25s;
+		}
+
+		&::after {
+			translate: 0 0;
+			transition: translate 0.25s, rotate 0.25s 0.25s;
+		}
+
+		&::before {
+			translate: 0 0;
+
+			transition: translate 0.25s, rotate 0.25s 0.25s;
+		}
+
+		&--is-active {
+			.main-nav__hamburger-bar {
+				scale: 0 1;
+			}
+
+			&::before {
+				translate: 0 9px;
+				rotate: -45deg;
+			}
+			&::after {
+				translate: 0 -9px;
+				rotate: 45deg;
+			}
 		}
 	}
+
 	&__links {
 		position: relative;
 		visibility: hidden;
@@ -64,5 +100,41 @@
 		color: $gray;
 		padding: 15px;
 		font-size: 1.2rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.main-nav {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 40px;
+		&__hamburger-bars {
+			display: none;
+		}
+
+		&__links {
+			visibility: visible;
+			translate: 0 0;
+			padding: 0;
+		}
+
+		&__list {
+			display: flex;
+		}
+
+		&__link {
+			padding: 40px;
+			font-size: 1.2rem;
+			transition: background-color 0.3s, color 0.3s;
+
+			&:hover {
+				color: $white;
+				background-color: $black;
+			}
+		}
+
+		&__logo {
+			font-size: 2.4rem;
+		}
 	}
 }
