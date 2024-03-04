@@ -1,0 +1,68 @@
+@use '../abstracts/variables' as *;
+
+.main-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	&__bar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: $white;
+	}
+
+	&__logo {
+		color: $gray;
+		font-size: 1.8rem;
+		margin-left: 20px;
+	}
+
+	&__hamburger-bars {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		box-sizing: content-box;
+		height: 20px;
+		padding: 20px;
+
+		.main-nav__hamburger-bar,
+		&::after,
+		&::before {
+			content: '';
+			width: 25px;
+			height: 3px;
+			border-radius: 5px;
+			background-color: $black;
+		}
+	}
+	&__links {
+		position: relative;
+		visibility: hidden;
+		padding: 20px;
+		z-index: -1;
+		background-color: $white;
+		translate: 0 -101%;
+		transition: visibility 1s, translate 1s;
+
+		&.main-nav__links--show {
+			visibility: visible;
+			translate: 0 0%;
+		}
+	}
+
+	&__list {
+		list-style: none;
+		text-align: center;
+		align-self: start;
+	}
+
+	&__link {
+		display: inline-block;
+		text-decoration: none;
+		color: $gray;
+		padding: 15px;
+		font-size: 1.2rem;
+	}
+}

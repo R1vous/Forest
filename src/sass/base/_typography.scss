@@ -1,4 +1,13 @@
+@use '../abstracts/variables' as *;
+
 body {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 62.5%;
+	background-color: $white;
+	overflow: hidden;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1600px;
 }
