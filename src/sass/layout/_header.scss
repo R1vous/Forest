@@ -1,0 +1,82 @@
+@use '../abstracts/variables' as *;
+
+.main-header {
+	position: relative;
+	top: 61px;
+	z-index: -1;
+	&__container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-image: url('../img/jungle-1807476_640.jpg');
+		background-position: center;
+		background-size: cover;
+		min-height: 50vh;
+		z-index: 1;
+		padding: 4em;
+	}
+
+	&__hero-shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: -1;
+	}
+
+	&__text {
+		text-align: center;
+		color: $white;
+	}
+
+	&__company-name {
+		font-size: 1.2rem;
+		margin-bottom: 10px;
+	}
+
+	&__heading {
+		font-size: 1.8rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.main-header {
+		&__company-name {
+			font-size: 1.6rem;
+			margin-bottom: 5px;
+		}
+
+		&__heading {
+			font-size: 2rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.main-header {
+		top: 104px;
+		&__text {
+			text-align: left;
+		}
+		&__container {
+			align-items: flex-start;
+			padding-left: 15%;
+			background-image: url('../img/jungle-1807476_1920.jpg');
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.main-header {
+		&__company-name {
+			font-size: 1.8rem;
+		}
+		&__heading {
+			font-size: 2.4rem;
+		}
+	}
+}

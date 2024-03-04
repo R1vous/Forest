@@ -13,7 +13,6 @@ const closeMenu = () => {
 };
 
 const clickHandler = e => {
-	console.log(e.target);
 	if (!e.target.classList.contains('li-menu') && !e.target.classList.contains('main-nav__hamburger-bars')) {
 		closeMenu();
 	}
