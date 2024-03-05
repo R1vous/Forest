@@ -1,13 +1,35 @@
 @use '../abstracts/variables' as *;
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 62.5%;
 	background-color: $white;
-	overflow: hidden;
 }
 
 .wrapper {
 	margin: 0 auto;
-	max-width: 1920px;
+	// max-width: 1920px;
+}
+
+.section-tittle {
+	margin-bottom: 40px;
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	font-weight: normal;
+	text-align: center;
+}
+
+section {
+	padding: 40px 20px;
+}
+
+@media (min-width: 1200px) {
+	.section-tittle {
+		font-size: 2rem;
+		margin-bottom: 60px;
+	}
 }

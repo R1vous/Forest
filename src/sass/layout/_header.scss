@@ -1,8 +1,7 @@
 @use '../abstracts/variables' as *;
 
 .main-header {
-	position: relative;
-	top: 61px;
+	margin-top: 61px;
 	z-index: -1;
 	&__container {
 		position: relative;
@@ -31,6 +30,9 @@
 	&__text {
 		text-align: center;
 		color: $white;
+		width: 100%;
+		max-width: 1920px;
+		margin: 0 auto;
 	}
 
 	&__company-name {
@@ -58,7 +60,7 @@
 
 @media (min-width: 992px) {
 	.main-header {
-		top: 104px;
+		margin-top: 104px;
 		&__text {
 			text-align: left;
 		}
