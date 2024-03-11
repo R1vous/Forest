@@ -1,0 +1,144 @@
+@use '../abstracts/variables' as *;
+
+.offers {
+	max-width: 1200px;
+	margin: 0 auto;
+
+	&__text {
+		text-align: center;
+	}
+
+	&__paragraph {
+		font-size: 1rem;
+		margin-bottom: 2em;
+	}
+
+	&__cards {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&__card {
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
+		border-radius: 5px;
+		padding: 2em 3em;
+		width: 90%;
+		max-width: 300px;
+		margin-bottom: 30px;
+
+		&-tittle {
+			font-size: 1.4rem;
+			text-align: center;
+		}
+
+		&-price {
+			font-size: 1.8rem;
+			padding: 10px;
+			text-align: center;
+			font-weight: bold;
+		}
+
+		&-options {
+			list-style: none;
+
+			padding-bottom: 20px;
+		}
+
+		&-option {
+			font-size: 1rem;
+			text-align-last: left;
+			line-height: 180%;
+
+			&--out-of-package {
+				color: #bbb;
+			}
+
+			.fa-check {
+				color: #5ed45e;
+			}
+
+			.fa-minus {
+				color: $black;
+			}
+
+			.fa-check,
+			.fa-minus {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	&__btn {
+		display: block;
+		margin: auto auto 0;
+		width: 100%;
+		padding: 0.5em 1em;
+		background-color: #fff;
+		border: none;
+		border-radius: 5px;
+		box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
+		font-size: 1rem;
+		color: $black;
+
+		&--middle-btn {
+			background-color: #5ed45e;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.offers {
+		&__cards {
+			flex-direction: row;
+			justify-content: center;
+		}
+		&__card {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.offers {
+		&__card-option {
+			font-size: 1.1rem;
+		}
+
+		&__paragraph {
+			font-size: 1.3rem;
+			margin-bottom: 3em;
+		}
+
+		&__card {
+			max-width: 280px;
+			&-options {
+				padding: 20px 0 40px;
+			}
+
+			&-tittle {
+				font-size: 1.4rem;
+			}
+
+			&-price {
+				font-size: 2rem;
+			}
+		}
+
+		&__btn {
+			font-size: 1.2rem;
+			cursor: pointer;
+			transition: background-color 0.3s;
+
+			&:hover {
+				background-color: #5ed45e;
+			}
+
+			&--middle-btn:hover {
+				background-color: $white;
+			}
+		}
+	}
+}
